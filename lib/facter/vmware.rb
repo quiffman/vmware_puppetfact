@@ -148,7 +148,7 @@ Facter.add(:vmware_patchlevel) do
             end
           when address.match(/E9A40/)
             if biosdate.include? '09/30/2014'
-              retval = 'u1'
+              update = 'u1'
             end
           end
         end
