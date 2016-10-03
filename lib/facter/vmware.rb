@@ -82,6 +82,8 @@ Facter.add(:vmware) do
             mainver = '5.5'
           when address.match(/E9A40/)
             mainver = '6.0'
+          when address.match(/E99E0/)
+            mainver = '6.0'
           end
           result=mainver
         end
@@ -149,6 +151,10 @@ Facter.add(:vmware_patchlevel) do
           when address.match(/E9A40/)
             if biosdate.include? '09/30/2014'
               update = 'u1'
+            end
+          when address.match(/E99E0/)
+            if biosdate.include? '09/21/2015'
+              update = 'u2'
             end
           end
         end
